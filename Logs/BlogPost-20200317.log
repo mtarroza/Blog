@@ -1,0 +1,9 @@
+2020-03-17T23:17:42.2124942+11:00  [INF] Running development environment (cf1094ad)
+2020-03-17T23:17:42.4542154+11:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-03-17T23:17:42.4601501+11:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-03-17T23:17:42.4651405+11:00  [INF] Content root path: "C:\Users\c\source\repos\BlogWorkingBackup" (b5d60022)
+2020-03-17T23:17:47.7511253+11:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-03-17T23:18:04.9125019+11:00 800000c3-0002-fd00-b63f-84710c7967bb [INF] Listing all BlogPosts (4f503dd4)
+2020-03-17T23:18:06.6811979+11:00 8000005c-0001-f500-b63f-84710c7967bb [INF] Listing all BlogPosts (4f503dd4)
+2020-03-17T23:18:06.7258462+11:00 8000006e-0000-f800-b63f-84710c7967bb [INF] Listing all BlogPosts (4f503dd4)

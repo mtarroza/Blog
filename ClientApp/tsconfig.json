@@ -14,9 +14,10 @@
     "typeRoots": [
       "../node_modules/@types"
     ],
-    "types": [
-      "core-js"
-    ],
+    "skipLibCheck": true,
+    //"types": [
+    //  "core-js"
+    //],
     "lib": [
       "es2018",
       "dom"
@@ -27,3 +28,5 @@
     "strictInjectionParameters": true
   }
 }
+
+

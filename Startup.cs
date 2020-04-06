@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -13,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Blog.Data;
+using Serilog.Extensions.Logging.File;
 
 namespace Blog
 {
@@ -44,18 +40,26 @@ namespace Blog
 
             services.AddScoped(typeof(IDataRepository<>), typeof(DataRepository<>));
 
-            //In production, the Angular files will be served from this directory
+            services.AddSingleton<IBlogPostService>((container) =>
+            {
+                var logger = container.GetRequiredService<ILogger<BlogPostService>>();
+                return new BlogPostService() { Logger = logger };
+            });
+
+            //The Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory, ILogger<Startup> logger)
         {
+            loggerFactory.AddFile("Logs/BlogPost.log");
+
             if (env.IsDevelopment())
             {
+                logger.LogInformation("Running development environment");
                 app.UseDeveloperExceptionPage();
             }
             else
