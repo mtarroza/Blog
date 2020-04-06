@@ -40,6 +40,6 @@ Setup Database Migration in Visual Studio 2019:
    BlogPostContext-{GUID}\Tables\dbo.BlogPosts
 6. Build and run the application
 
-#Acknowledgement
+# Acknowledgement
 Thank you very much to @dileno (https://github.com/dileno) for this great tutorial
 https://dev.to/dileno/build-a-simple-crud-app-with-angular-8-and-asp-net-core-2-2-part-1-back-end-39e1
